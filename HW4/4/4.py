@@ -25,7 +25,7 @@ for i in range(len(freq_dow)):
 
 plt.suptitle("DOW file and its fourier transform")
 plt.subplot(211)
-plt.plot(t_dow,y_dow)
+plt.plot(t_dow,y_dow, label= 'original data')
 plt.xlabel('Time')
 plt.ylabel(r'$f(t)$')
 
@@ -33,6 +33,7 @@ plt.subplot(212)
 plt.xlabel(r'$k$')
 plt.ylabel(r'$F(k)$')
 plt.plot(freq_dow,fk_dow_abs)
+plt.legend()
 # plt.savefig('dow.png',bbox_inches = 'tight')
 # plt.clf()
 plt.show()
@@ -50,9 +51,10 @@ for i in range(len(freq_dow)):
 ft_inverse_10 = np.fft.irfft(fk_dow_abs_zero)
 plt.xlabel('Time')
 plt.ylabel(r'$f(t)$')
-
-# plt.plot(t_dow,y_dow,'b')
-plt.plot(t_dow,ft_inverse_10,'r')
+plt.title('Original data and last "90%" freq set to zero')
+plt.plot(t_dow,y_dow,'b', label = 'original data')
+plt.plot(t_dow,ft_inverse_10,'r', label = 'Higher freq set to zero')
+plt.legend()
 plt.show()
 
 
@@ -64,25 +66,26 @@ ft_inverse_2 = np.fft.irfft(fk_dow_abs_zero)
 
 plt.xlabel('Time')
 plt.ylabel(r'$f(t)$')
+plt.title('Original data and last "98%" freq set to zero')
 
-# plt.plot(t_dow,y_dow,'b')
-plt.plot(t_dow,ft_inverse_2,'r')
+plt.plot(t_dow,y_dow,'b', label = 'original data')
+plt.plot(t_dow,ft_inverse_2,'r', label = 'Higher freq set to zero')
+plt.legend()
 plt.show()
 
 
 
 N = np.linspace(0,1,1000)
-
 ft_sq = signal.square(2*math.pi*N)
-
 fk_sq = np.fft.rfft(ft_sq)
-# fk_sq_abs = []
+
 
 for i in range(10,len(fk_sq)):
 	fk_sq[i] = 0
 
 ft_inverse_sq = np.fft.irfft(fk_sq)
-plt.plot(N,ft_sq)
-plt.plot(N,ft_inverse_sq)
+plt.plot(N,ft_sq, label = 'square wave')
+plt.plot(N,ft_inverse_sq, label = 'All but the 1st ten cf set to zero')
 plt.ylim(-2,2)
+plt.legend()
 plt.show()

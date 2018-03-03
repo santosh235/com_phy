@@ -1,9 +1,6 @@
-# -*- coding: utf-8 -*-
+# -*- coding: PYTHON3 -*-
 # @Author: Santosh
-# @Date:   2018-03-02 18:43:52
 # @Last Modified by:   Santosh
-# @Last Modified time: 2018-03-02 18:48:35
-
 
 
 """ FOURIER FILTERING AND  SMOOTHING"""

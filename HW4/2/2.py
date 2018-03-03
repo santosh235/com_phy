@@ -29,17 +29,17 @@ print("The estimated periodicity is : 124 months" )
 
 #POWER SPECTRUM CALCULATION
 fk = np.fft.fft(yv)
-freq = np.fft.fftfreq(xv.shape[-1])
+freq = np.fft.rfftfreq(xv.shape[-1])
 fk_abs = []
 
-for i in range(len(xv)):
+for i in range(len(freq)):
 	fk_abs.append(abs(fk[i] * fk[i].conjugate()))
 
 #PLOTTING POWER SPECTRUM
 plt.plot(freq,fk_abs)
 plt.xlabel(r'$k$')
 plt.ylabel(r'$c_k^2$')
-plt.xlim(-0.2,0.2)
+plt.xlim(0,0.1)
 plt.ylim(0,0.5e10)
 plt.title('Power Spectrum')
 plt.savefig('2_sunspots_2_power_spectrum.png' , bbox_inches='tight')

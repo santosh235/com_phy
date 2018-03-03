@@ -1,53 +1,41 @@
-# -*- coding: utf-8 -*-
-# @Author: Santosh
-# @Date:   2018-03-02 18:43:52
-# @Last Modified by:   Santosh
-# @Last Modified time: 2018-03-02 19:59:29
-
-
-
 """ FOURIER FILTERING AND  SMOOTHING"""
+
+
 import matplotlib.pyplot as plt
 import numpy as np
-import math
-from scipy import signal
+from math import sin,pi,hypot 
+
+#DEFINING THE INTENSITY TRANSMISSION FUNCTION
+def q(u):
+	alpha = pi/20.
+	z = sin(alpha * u) **2
+	return z
+
+N = 400
+u = []
+w = 200
+
+#CREATING AN ARRAY OF 4000 POINTS
+for n in range(10 * N):
+	if (n < N):
+		p = (n * w / N) - (w / 2.)
+		u.append(float(p))
+	else :
+		u.append(float(0))			#EXTRA POINTS ARE SET TO ZERO
 
 
-# READING DATA FROM DOW.TXT AND STORING IT IN ARRAY
-f1 = open('dow.txt', 'r')
-lines = f1.readlines()
-y_dow = []
-for line in lines:
-    p = line.split()
-    y_dow.append(float(p[0]))
-y_dow = np.array(y_dow)
-t_dow = np.linspace(0, 2*math.pi, len(y_dow)) 			#CREATING AN ARRAY OF POINTS (TIME)
 
+# ARRAY OF Yn
+y = []
+for n in range(10 * N):
+	y.append(float(q(u[n])))
 
-#REAL FOURIER TRANSFORM OF THE DOW.TXT
-fk_dow = np.fft.rfft(y_dow)
-freq_dow = np.fft.fftfreq(t_dow.shape[-1])
-fk_dow_abs = []
+#FOURIER TRANSFORMATION 
+ck = np.fft.fft(y)
 
-# for i in range(len(freq_dow)):
-# 	fk_dow_abs.append(math.hypot(fk_dow.real[i],fk_dow.imag[i]))
-print(len(t_dow))
-print("\n\n")
-print(len(freq_dow))
+ck_sq =[]
 
-# #PLOTTING THE DATA FILE AS WELL AS THE FOURIER TRANSFORM
-# plt.suptitle("DOW file and its fourier transform")
-# plt.subplot(211)
-# plt.plot(t_dow,y_dow, label= 'original data')
-# plt.xlabel('Time')
-# plt.ylabel(r'$f(t)$')
+# MOD SQUARE OF FOURIER COEFFIECIENTS
+for i in range(len(ck)):
+	ck_sq.append((ck[i] * ck[i].conjugate()))	
 
-# plt.subplot(212)
-# plt.xlabel(r'$k$')
-# plt.ylabel(r'$F(k)$')
-# plt.ylim(0,0.2e6)
-# plt.plot(freq_dow,fk_dow_abs, label = 'Fourier transform')
-# plt.legend()
-# # plt.savefig('dow_rfft.png',bbox_inches = 'tight')
-# plt.show()
-# # plt.clf()

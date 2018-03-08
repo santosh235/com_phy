@@ -1,3 +1,8 @@
+# -*- coding: PYTHON3 -*-
+# @Author: Santosh
+# @Last Modified by:   Santosh
+
+
 """ Image Deconvolution"""
 
 import matplotlib.pyplot as plt

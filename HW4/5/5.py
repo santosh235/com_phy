@@ -1,3 +1,8 @@
+# -*- coding: PYTHON3 -*-
+# @Author: Santosh
+# @Last Modified by:   Santosh
+
+
 """ COMPARISON OF DFT AND DCT"""
 
 

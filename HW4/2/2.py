@@ -1,3 +1,8 @@
+# -*- coding: PYTHON3 -*-
+# @Author: Santosh
+# @Last Modified by:   Santosh
+
+
 """Detecting periodicityof sunspots"""
 
 import matplotlib.pyplot as plt
@@ -23,6 +28,7 @@ plt.xlabel('Time (months)')
 plt.ylabel('sunspots number')
 plt.title("Original data for sunspots")
 plt.savefig('2_sunspots_1.png' , bbox_inches='tight')
+plt.show()
 plt.clf()
 
 print("The estimated periodicity is : 124 months" )
@@ -43,6 +49,7 @@ plt.xlim(0,0.1)
 plt.ylim(0,0.5e10)
 plt.title('Power Spectrum')
 plt.savefig('2_sunspots_2_power_spectrum.png' , bbox_inches='tight')
+plt.show()
 plt.clf()
 
 
@@ -63,4 +70,5 @@ plt.xlabel('Time')
 plt.ylabel('sine wave')
 plt.title('Sine wave of freq = 0.008')
 plt.savefig('2_sunspots_3.png' , bbox_inches='tight')
+plt.show()
 plt.clf()

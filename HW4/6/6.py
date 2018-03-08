@@ -1,3 +1,8 @@
+# -*- coding: PYTHON3 -*-
+# @Author: Santosh
+# @Last Modified by:   Santosh
+
+
 """FAST FOURIER TRANSFORM USING PERSONAL WRIITEN FFT CODE"""
 
 import numpy as np

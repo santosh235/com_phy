@@ -1,7 +1,8 @@
-# @Author: Santosh
-# @Date:   2018-03-03 18:55:59
+# -*- coding: utf-8 -*-
+# @Author: santosh
+# @Date:   2018-03-15 23:55:34
 # @Last Modified by:   santosh
-# @Last Modified time: 2018-03-11 10:35:46
+# @Last Modified time: 2018-03-15 23:57:27
 
 
 """ Random Number generator"""
@@ -23,6 +24,7 @@ for x in range(1000000):
   	count = count + 1				#COUNT IS REGISTERED FOR EVERY DOUBLE SIX
 
 
-#CALCULATING THE PROBABILITY OF DOUBLE SIX prob = float(count / 1e6)
+#CALCULATING THE PROBABILITY OF DOUBLE SIX
+prob = float(count / 1e6)
 print("The probability of double six for 1 million events is : %f" %(prob))
 

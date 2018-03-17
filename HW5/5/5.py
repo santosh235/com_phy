@@ -2,7 +2,6 @@
 # @Author: santosh
 # @Date:   2018-03-12 17:53:25
 # @Last Modified by:   santosh
-# @Last Modified time: 2018-03-15 11:16:49
 
 
 """ Volume of a Hyper-Sphere"""

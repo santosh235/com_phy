@@ -2,7 +2,6 @@
 # @Author: santosh
 # @Date:   2018-03-15 23:56:37
 # @Last Modified by:   santosh
-# @Last Modified time: 2018-03-15 23:57:30
 
 """ RADIO_ACTIVE DECAY """
 

@@ -2,7 +2,6 @@
 # @Author: santosh
 # @Date:   2018-03-15 23:55:34
 # @Last Modified by:   santosh
-# @Last Modified time: 2018-03-15 23:57:27
 
 
 """ Random Number generator"""

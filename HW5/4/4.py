@@ -2,7 +2,6 @@
 # @Author: santosh
 # @Date:   2018-03-15 23:54:49
 # @Last Modified by:   santosh
-# @Last Modified time: 2018-03-15 23:58:15
 
 
 """ Integration using Monte-Carlo and mean value method"""

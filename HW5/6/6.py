@@ -2,7 +2,6 @@
 # @Author: santosh
 # @Date:   2018-03-14 19:43:15
 # @Last Modified by:   santosh
-# @Last Modified time: 2018-03-15 15:18:14
 
 
 """ Importance Sampling """

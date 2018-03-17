@@ -3,7 +3,7 @@
 # @Date:   2018-03-15 23:55:00
 # @Last Modified by:   santosh
 
-"""Brownian motion"""
+"""Diffusion-limited aggretion"""
 
 import numpy
 import matplotlib.pyplot as plt
@@ -65,15 +65,3 @@ while (i != 1000000):
 			y[i] = y[i - 1] -1
 			i = i + 1
 
-
-
-
-#Data plotting
-plt.title("Brownian motion")
-plt.plot(x, y)
-plt.xlim(0,101)
-plt.ylim(0,101)
-plt.xlabel('x')
-plt.ylabel('y')
-plt.savefig("brownian_motion.png",bbox_inches="tight")
-plt.show()
